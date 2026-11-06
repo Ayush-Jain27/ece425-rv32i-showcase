@@ -1,0 +1,19 @@
+# Keep native design data and local environment material outside this showcase.
+*.oa
+*.oa-
+*.dm
+*.lib
+*.lef
+*.gds
+*.gdsii
+*.db
+*.log
+*.rpt
+*.fsdb
+*.vcd
+*.dat/
+.env*
+cds.lib
+lib.defs
+source/
+private/
