@@ -4,10 +4,10 @@ Keep this repository private until each applicable item has dated evidence and A
 
 | Review | Status | Evidence needed |
 |---|---|---|
-| Course permission | OPEN | Spring 2026 policy or instructor permission covering the actual summary, diagrams, and any later code/images |
-| Collaboration | OPEN | Individual contribution map and permission for any shared work |
-| Technology provenance | OPEN | Exact PDK/model/library versions and their actual license files |
-| EDA output sharing | OPEN | Applicable institutional/vendor terms for any screenshots or native outputs proposed for release |
+| Course permission | OPEN | Spring 2026 policy or instructor permission covering this documentation-only summary and conceptual diagrams |
+| Collaboration | CONFIRMED BY AUTHOR | Ayush confirmed 2026-11-06 that all student implementation work was his; course reference material remains separately attributed |
+| Technology redistribution | EXCLUDED FROM CURRENT RELEASE | No PDK/model/library payload is included; exact license review required before any future inclusion |
+| Design images and native outputs | EXCLUDED | Author confirmed design images cannot be shared; do not include screenshots, traces, reconstructed schematics, or native design exports |
 | Technical claims | OPEN | Final revision and attributable simulation, LVS/DRC, and timing evidence |
 | Sanitization | PARTIAL | Clean documentation-only history; recheck complete history and attachments before release |
 | User release approval | OPEN | Approval of the final audited commit |
@@ -17,6 +17,14 @@ Keep this repository private until each applicable item has dated evidence and A
 New prose and high-level conceptual diagrams are staged privately for review. All 958 tracked source files are withheld from this showcase, including instructional assets, HDL/test infrastructure, native databases, Liberty/LEF, environment configuration, screenshots, and raw reports. This conservative decision is not a claim that every source file is legally restricted.
 
 The initial audit inventoried and hashed every tracked file, screened textual content, inspected selected documentation/reports, and visually reviewed the integration screenshot. Binary databases were not semantically audited; the shallow source checkout does not establish full historical provenance. The detailed file manifest remains local and is not included in this repository.
+
+## Documentation-only release path
+
+Present the engineering scope using newly written explanations and generic functional diagrams. Do not reproduce exact circuitry, transistor sizing, layout geometry, pin-by-pin connectivity, or course instructional figures. Redrawing a restricted image does not establish permission to share its underlying content.
+
+The current diagrams describe broad design hierarchy and functional boundaries. They are not extracted from the design and are not evidence that the implementation passed verification. Keep quantitative results and detailed solution descriptions out unless separately supported and cleared.
+
+Review the exact documentation-only commit against the course policy or obtain instructor permission for that scope, then obtain Ayush's final approval before changing repository visibility. This path avoids distributing design images; it does not override a course restriction on project descriptions.
 
 ## Policy references checked 2026-11-06
 

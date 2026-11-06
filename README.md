@@ -4,7 +4,7 @@
 
 A study in the physical implementation of a 32-bit, bit-sliced RISC-V datapath: custom cell design, hierarchical schematic/layout construction, and integration with an automatically placed-and-routed controller.
 
-> Private review copy. Public release requires course-sharing clearance and confirmation of individual contributions. This repository contains newly written documentation and conceptual diagrams; course solutions, native EDA databases, technology libraries, and original screenshots are withheld.
+> Private review copy. Public release requires course-sharing clearance and final author approval. Ayush Jain confirms sole authorship of the student implementation. This repository contains newly written documentation and conceptual diagrams; course solutions, native EDA databases, technology libraries, and design images are excluded.
 
 ![Conceptual design hierarchy](assets/design-hierarchy.svg)
 
