@@ -1,40 +1,53 @@
-# RV32I Datapath · From Transistors to Physical Integration
+# RISC-V Datapath
 
-**UIUC ECE 425 · Spring 2026 · Portfolio review draft**
+**Custom digital design, from transistor-level cells to processor integration.**
 
-A study in the physical implementation of a 32-bit, bit-sliced RISC-V datapath: custom cell design, hierarchical schematic/layout construction, and integration with an automatically placed-and-routed controller.
+I designed the schematics and layouts for a bit-sliced RISC-V datapath in Cadence Virtuoso, then worked through the physical-design flow connecting custom blocks with synthesized logic. This project was completed individually for ECE 425 at the University of Illinois Urbana-Champaign in Spring 2026.
 
-> Private review copy. Public release requires course-sharing clearance and final author approval. Ayush Jain confirms sole authorship of the student implementation. This repository contains newly written documentation and conceptual diagrams; course solutions, native EDA databases, technology libraries, and design images are excluded.
+The central challenge was hierarchy: designing one reusable slice, connecting arithmetic and comparison across slices, and keeping the physical interfaces consistent as the design grew into a complete datapath.
 
-![Conceptual design hierarchy](assets/design-hierarchy.svg)
+![Design hierarchy: custom cells, functional blocks, datapath, and integration](assets/design-hierarchy.svg)
 
-## Engineering focus
+## My work
 
-- **Cell-to-system hierarchy:** saved custom-cell views feed arithmetic, storage, multiplexing, and comparison blocks.
-- **Bit-sliced organization:** the course architecture composes 32 one-bit slices into a datapath, making repeated placement and inter-slice routing central design concerns.
-- **Physical integration:** saved artifacts cover a controller, a standard-cell CPU, and a CPU variant using a register-file macro.
-- **Evidence discipline:** saved design views and screenshots establish artifact existence. They do not establish functional correctness, timing closure, or fabrication readiness.
+- **Custom cells:** transistor-level schematic and layout work for logic, selection, and storage elements.
+- **Datapath construction:** a register file, arithmetic and logic blocks, comparison logic, multiplexers, and supporting state elements organized into repeated bit slices.
+- **Shift extension:** a separate hierarchy containing shifter-related cells and an extended datapath.
+- **Physical integration:** controller and CPU place-and-route work, including library exchange files and a register-file macro flow.
 
-## What is supported by the archive?
+The processor reference RTL, controller, specifications, and test infrastructure were supplied by the course. My contribution was the student implementation and physical-design work, not the invention of the reference architecture.
 
-| Scope | Evidence inspected | Claim supported |
-|---|---|---|
-| Custom datapath | Native schematic/layout files for datapath, bitslice, ALU, register file, and supporting cells | Design artifacts exist; connectivity and correctness require licensed-tool review |
-| Shift extension | Separate shifted datapath and bitslice views plus shifter cells | Extension artifacts exist; shift instruction tests are not confirmed |
-| Physical integration | Controller/CPU saved databases and four screenshots | Physical-design work is archived; the integration screenshot was visually inspected |
-| DRC | Two saved Innovus geometry reports report no violations | Historical tool reports only; exact database association and full signoff remain unverified |
-| Timing | An archived report warns of a timing loop and a cut arc | Timing closure must not be claimed |
-| Simulation / LVS | Course infrastructure exists; no conclusive datapath pass record located in the initial audit | No passing result claimed |
+## Design approach
 
-## Explore
-
-| Document | Contents |
+| Stage | Engineering focus |
 |---|---|
-| [Architecture](docs/architecture.md) | Conceptual datapath, implementation hierarchy, and interfaces |
-| [Implementation](docs/implementation.md) | Custom design and physical integration stages |
-| [Verification](docs/verification.md) | Evidence, limitations, and missing checks |
-| [Reproducibility](docs/reproducibility.md) | What can be inspected here and what needs authorized tools |
-| [Attribution](ATTRIBUTION.md) | Course reference design, student work, and pending ownership review |
-| [Release review](docs/release-review.md) | Requirements before a public release |
+| Transistors → cells | Build reusable logic and storage elements with consistent physical interfaces |
+| Cells → blocks | Compose arithmetic, comparison, selection, and register-file structures |
+| Blocks → datapath | Repeat a one-bit slice and connect shared control and inter-slice signals |
+| Datapath → integration | Bring custom geometry and synthesized logic together through defined interfaces |
 
-No area, frequency, power, transistor-count, benchmark, silicon, or complete RV32I compliance claim is made. The course target excludes system/fence operations and treats shift support as an extension. The ISA is the architectural context, not proof of full processor compliance.
+The architecture uses a 32-bit datapath with separate instruction and data memory interfaces. The diagrams in this repository explain the organization at a conceptual level; they are not extracted schematics or layout images.
+
+## Tools and flow
+
+**Cadence Virtuoso · Cadence Innovus · Synopsys synthesis and simulation infrastructure · Calibre checking flow · FreePDK45**
+
+The project connects custom schematic/layout work with the standard-cell flow through Liberty timing and LEF geometry interfaces. Tool-specific databases, course source, and design images are not distributed in this repository.
+
+## Technical documentation
+
+- [Architecture](docs/architecture.md) — functional organization and design boundaries.
+- [Implementation](docs/implementation.md) — custom-cell hierarchy and physical integration.
+- [Verification](docs/verification.md) — available evidence, check scope, and unresolved results.
+- [Reproducibility](docs/reproducibility.md) — dependencies and the authorized design environment.
+- [Attribution](ATTRIBUTION.md) — individual work and course-provided components.
+
+## Verification status
+
+The retained archive includes schematic/layout views, physical-design saves, and historical geometry reports. Two reports record no DRC violations; their association with the final design state still needs confirmation. A timing report also contains a loop warning. Full simulation/LVS completion and timing closure are not claimed here; the [verification notes](docs/verification.md) explain the evidence precisely.
+
+## About this repository
+
+This is a technical project showcase, not a distributable processor implementation. It contains original documentation and conceptual diagrams. Course solutions, design screenshots, native databases, technology libraries, and licensed dependencies are excluded. See the [sharing notes](docs/release-review.md) for the remaining course-policy review.
+
+**Ayush Jain** · [GitHub](https://github.com/Ayush-Jain27) · [Portfolio](https://ayush-jain.dev)

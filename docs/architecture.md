@@ -1,4 +1,4 @@
-# Architecture and design boundaries
+# Architecture
 
 The course target is a single-cycle 32-bit datapath with separate instruction and data memory ports. A controller supplies decoded control and immediates. The archive contains custom datapath views; the SystemVerilog processor architecture and controller originated in course-provided material.
 

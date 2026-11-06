@@ -1,6 +1,6 @@
-# Public-release review — not cleared
+# Sharing and publication scope
 
-Keep this repository private until each applicable item has dated evidence and Ayush approves the exact release commit.
+The author made this documentation repository public on 2026-11-06. That visibility change does not establish instructor permission. Course-specific sharing clearance remains unresolved; design images and implementation files remain excluded.
 
 | Review | Status | Evidence needed |
 |---|---|---|
@@ -10,11 +10,11 @@ Keep this repository private until each applicable item has dated evidence and A
 | Design images and native outputs | EXCLUDED | Author confirmed design images cannot be shared; do not include screenshots, traces, reconstructed schematics, or native design exports |
 | Technical claims | OPEN | Final revision and attributable simulation, LVS/DRC, and timing evidence |
 | Sanitization | PARTIAL | Clean documentation-only history; recheck complete history and attachments before release |
-| User release approval | OPEN | Approval of the final audited commit |
+| Author publication decision | RECORDED | Author made the documentation repository public on 2026-11-06; this does not resolve course permission |
 
 ## Current inclusion decision
 
-New prose and high-level conceptual diagrams are staged privately for review. All 958 tracked source files are withheld from this showcase, including instructional assets, HDL/test infrastructure, native databases, Liberty/LEF, environment configuration, screenshots, and raw reports. This conservative decision is not a claim that every source file is legally restricted.
+The repository contains newly written prose and high-level conceptual diagrams. All 958 tracked source files are withheld from this showcase, including instructional assets, HDL/test infrastructure, native databases, Liberty/LEF, environment configuration, screenshots, and raw reports. This conservative decision is not a claim that every source file is legally restricted.
 
 The initial audit inventoried and hashed every tracked file, screened textual content, inspected selected documentation/reports, and visually reviewed the integration screenshot. Binary databases were not semantically audited; the shallow source checkout does not establish full historical provenance. The detailed file manifest remains local and is not included in this repository.
 
@@ -24,7 +24,7 @@ Present the engineering scope using newly written explanations and generic funct
 
 The current diagrams describe broad design hierarchy and functional boundaries. They are not extracted from the design and are not evidence that the implementation passed verification. Keep quantitative results and detailed solution descriptions out unless separately supported and cleared.
 
-Review the exact documentation-only commit against the course policy or obtain instructor permission for that scope, then obtain Ayush's final approval before changing repository visibility. This path avoids distributing design images; it does not override a course restriction on project descriptions.
+Review the exact documentation-only commit against the course policy or obtain instructor permission for that scope before treating publication clearance as complete. This path avoids distributing design images; it does not override a course restriction on project descriptions.
 
 ## Policy references checked 2026-11-06
 

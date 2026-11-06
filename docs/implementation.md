@@ -1,19 +1,25 @@
-# Implementation breakdown
+# Implementation
 
-## Custom cells
+## Custom-cell foundation
 
-The custom-cell library contains views for logic gates, muxes, a latch, a flip-flop, and transmission gates. Schematic, layout, symbol, and abstract views appear in the archive. Ayush confirms sole authorship of the student implementation; correctness remains subject to verification evidence.
+The project starts with transistor-level logic, multiplexing, and storage cells. The retained library contains schematic, layout, symbol, and abstract views. These cells form the building blocks for the higher-level datapath.
 
-## Datapath hierarchy
+The useful design discipline here is consistency: a cell must have a logical interface that can be composed and a physical interface that can be connected. A finished-looking view alone is not evidence of correctness; the corresponding checks belong in the verification record.
 
-The saved datapath library includes arithmetic, comparison, storage, multiplexing, and shift-related cells. Base and shift-extension top levels are separate. This organization is consistent with the course's bit-sliced target. No native OpenAccess database is copied here, and no claim is made that the database was opened or checked during this portfolio preparation.
+## Hierarchical datapath
+
+The design hierarchy includes an ALU, adder, comparator, register file, registers, and multi-input multiplexers. A bit slice groups the logic needed for one position in a wider datapath. Repeating the slice keeps the structure regular while making the inter-slice carry, comparison, and control connections explicit design concerns.
+
+The base datapath and shift extension have separate saved hierarchies. The extension includes shifter-related cells; its existence is distinct from demonstrated instruction-test coverage.
 
 ## Physical integration
 
-The archive includes controller and two CPU project saves, Tcl scripts, Liberty/LEF exchange files, and screenshots. The course distinguishes a standard-cell CPU flow from a register-file-macro flow. File names align with those deliverables; that correspondence alone does not verify macro use or final correctness.
+The retained deliverables include controller and CPU project saves, physical-design scripts, and Liberty/LEF exchange files. The course flow explores both a standard-cell implementation and an implementation using a register-file macro.
 
-The integration screenshot was visually reviewed and shows a large repeated datapath region connected to an upper logic region in Virtuoso. Ayush confirmed that design images cannot be shared, so it is excluded. The original conceptual diagrams in this showcase explain hierarchy without reproducing the screenshot or detailed circuitry.
+Liberty describes timing behavior for synthesis and timing analysis. LEF describes the physical abstraction needed for placement and routing. These interfaces connect the custom-design work to the automated flow without requiring the tools to treat each macro as transistor-level geometry.
 
-## Engineering evidence still needed
+The integration screenshot was inspected during documentation preparation. It shows a repeated datapath region connected to an upper logic region. Design images cannot be shared, so this repository uses conceptual illustrations rather than that screenshot.
 
-Confirm the final database revision, DRC/LVS results, executed tests, and any measured timing/area/power results before making completion or performance claims. Student implementation ownership is confirmed by the author; reference-design attribution remains separate.
+## Evidence boundary
+
+The student implementation is Ayush Jain's individual work; the controller and reference architecture originate in course material. Native design databases were inventoried but not opened or reverified during documentation preparation. The [verification record](verification.md) separates available artifacts from confirmed results.
