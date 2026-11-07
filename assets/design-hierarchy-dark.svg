@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="204" viewBox="0 0 960 204" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">From custom cells to physical integration</title>
+<desc id="desc">Four stages: schematic and layout cells, functional blocks, a repeated bit-sliced datapath, and integration with supplied control logic. Conceptual illustration, not a schematic, layout, or verification result.</desc>
+<rect width="960" height="204" fill="#0d1117"/>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}.label{font-size:17px;font-weight:600;fill:#e6edf3}.detail{font-size:13px;fill:#919ca8}.index{font-size:11px;letter-spacing:1.5px;fill:#919ca8}</style>
+<defs><marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="m1 1 3 2-3 2" stroke="#3d4854" stroke-width="1.2"/></marker></defs>
+<g stroke="#3d4854" stroke-width="1.3" marker-end="url(#arrow)"><path d="M204 65H242"/><path d="M446 65H484"/><path d="M688 65H726"/></g>
+<g transform="translate(22 0)">
+<text class="index" y="20">01</text>
+<g stroke="#59b9ab" stroke-width="1.5">
+<rect x="13" y="44" width="42" height="42" rx="3" fill="#152b2b"/>
+<path d="M0 55H13M0 75H13M55 65H70M26 44V35M42 86V95"/>
+<path d="M25 55V75M31 55H42V75H31M19 65H25"/>
+</g>
+<text class="label" y="124">Custom cells</text>
+<text class="detail" y="148">Logic, selection, storage</text>
+<text class="detail" y="168">Schematic and layout</text>
+</g>
+<g transform="translate(264 0)">
+<text class="index" y="20">02</text>
+<g stroke="#59b9ab" stroke-width="1.5" fill="#152b2b">
+<rect y="43" width="35" height="18" rx="2"/><rect y="69" width="35" height="18" rx="2"/>
+<path d="M63 43H94L82 55V75L94 87H63L48 65Z"/>
+<path d="M35 52H54M35 78H54M88 65H106" fill="none"/>
+</g>
+<text class="label" y="124">Functional blocks</text>
+<text class="detail" y="148">ALU, register file, compare</text>
+<text class="detail" y="168">Compose reusable cells</text>
+</g>
+<g transform="translate(506 0)">
+<text class="index" y="20">03</text>
+<g stroke="#59b9ab" stroke-width="1.4" fill="#152b2b">
+<rect x="0" y="44" width="16" height="43" rx="2"/><rect x="22" y="44" width="16" height="43" rx="2"/><rect x="44" y="44" width="16" height="43" rx="2"/><rect x="66" y="44" width="16" height="43" rx="2"/><rect x="88" y="44" width="16" height="43" rx="2"/>
+<path d="M8 36H96M8 36V44M30 36V44M52 36V44M74 36V44M96 36V44M16 65H22M38 65H44M60 65H66M82 65H88" fill="none"/>
+</g>
+<text class="label" y="124">Bit-sliced datapath</text>
+<text class="detail" y="148">Repeat slices across 32 bits</text>
+<text class="detail" y="168">Carry, compare, shared control</text>
+</g>
+<g transform="translate(748 0)">
+<text class="index" y="20">04</text>
+<g stroke="#59b9ab" stroke-width="1.4" fill="#152b2b">
+<rect y="40" width="40" height="49" rx="3"/><rect x="62" y="40" width="55" height="19" rx="2"/><rect x="62" y="70" width="55" height="19" rx="2"/>
+<path d="M40 53H51V49H62M40 77H51V80H62M9 48V81M17 48V81M25 48V81" fill="none"/>
+</g>
+<text class="label" y="124">Physical integration</text>
+<text class="detail" y="148">Custom and synthesized logic</text>
+<text class="detail" y="168">LEF geometry, Liberty timing</text>
+</g>
+<path d="M22 191H938" stroke="#3d4854" stroke-width="1"/>
+</svg>
