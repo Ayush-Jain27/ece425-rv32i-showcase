@@ -2,11 +2,16 @@
 
 **Custom digital design, from transistor-level cells to processor integration.**
 
-I designed the schematics and layouts for a bit-sliced RISC-V datapath in Cadence Virtuoso, then worked through the physical-design flow connecting custom blocks with synthesized logic. This project was completed individually for ECE 425 at the University of Illinois Urbana-Champaign in Spring 2026.
+I designed the schematics and layouts for a bit-sliced RISC-V datapath in Cadence Virtuoso, then worked through the physical-design flow connecting custom blocks with synthesized logic.
 
 The central challenge was hierarchy: designing one reusable slice, connecting arithmetic and comparison across slices, and keeping the physical interfaces consistent as the design grew into a complete datapath.
 
-![Design hierarchy: custom cells, functional blocks, datapath, and integration](assets/design-hierarchy.svg)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/design-hierarchy-dark.svg">
+  <img src="assets/design-hierarchy.svg" alt="Conceptual datapath showing the register file, operand selection, ALU, memory interface, and writeback loop" width="960">
+</picture>
+
+*Selected data paths, drawn for this showcase. This is a conceptual overview, not an extracted schematic.*
 
 ## My work
 
@@ -15,7 +20,7 @@ The central challenge was hierarchy: designing one reusable slice, connecting ar
 - **Shift extension:** a separate hierarchy containing shifter-related cells and an extended datapath.
 - **Physical integration:** controller and CPU place-and-route work, including library exchange files and a register-file macro flow.
 
-The processor reference RTL, controller, specifications, and test infrastructure were supplied by the course. My contribution was the student implementation and physical-design work, not the invention of the reference architecture.
+The processor reference RTL, controller, specifications, and test infrastructure were supplied. My contribution was the individual implementation and physical-design work; the reference architecture and supplied infrastructure are not my original designs.
 
 ## Design approach
 
@@ -32,15 +37,15 @@ The architecture uses a 32-bit datapath with separate instruction and data memor
 
 **Cadence Virtuoso · Cadence Innovus · Synopsys synthesis and simulation infrastructure · Calibre checking flow · FreePDK45**
 
-The project connects custom schematic/layout work with the standard-cell flow through Liberty timing and LEF geometry interfaces. Tool-specific databases, course source, and design images are not distributed in this repository.
+The project connects custom schematic/layout work with the standard-cell flow through Liberty timing and LEF geometry interfaces. Tool-specific databases, underlying implementation source, and design images are not distributed in this repository.
 
 ## Technical documentation
 
-- [Architecture](docs/architecture.md) — functional organization and design boundaries.
-- [Implementation](docs/implementation.md) — custom-cell hierarchy and physical integration.
-- [Verification](docs/verification.md) — available evidence, check scope, and unresolved results.
-- [Reproducibility](docs/reproducibility.md) — dependencies and the authorized design environment.
-- [Attribution](ATTRIBUTION.md) — individual work and course-provided components.
+- [Architecture](docs/architecture.md): functional organization and design boundaries.
+- [Implementation](docs/implementation.md): custom-cell hierarchy and physical integration.
+- [Verification](docs/verification.md): available evidence, check scope, and unresolved results.
+- [Reproducibility](docs/reproducibility.md): dependencies and the authorized design environment.
+- [Attribution](ATTRIBUTION.md): individual work and supplied components.
 
 ## Verification status
 
@@ -48,6 +53,6 @@ The retained archive includes schematic/layout views, physical-design saves, and
 
 ## About this repository
 
-This is a technical project showcase, not a distributable processor implementation. It contains original documentation and conceptual diagrams. Course solutions, design screenshots, native databases, technology libraries, and licensed dependencies are excluded. See the [sharing notes](docs/release-review.md) for the remaining course-policy review.
+This is a technical project showcase, not a distributable processor implementation. It contains original documentation and conceptual diagrams. Underlying implementation source, design screenshots, native databases, technology libraries, and licensed dependencies are excluded. See the [sharing notes](docs/release-review.md) for publication boundaries and the release review.
 
 **Ayush Jain** · [GitHub](https://github.com/Ayush-Jain27) · [Portfolio](https://ayush-jain.dev)
