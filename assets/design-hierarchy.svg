@@ -1,51 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="204" viewBox="0 0 960 204" fill="none" role="img" aria-labelledby="title desc">
-<title id="title">From custom cells to physical integration</title>
-<desc id="desc">Four stages: schematic and layout cells, functional blocks, a repeated bit-sliced datapath, and integration with supplied control logic. Conceptual illustration, not a schematic, layout, or verification result.</desc>
-<rect width="960" height="204" fill="#ffffff"/>
-<style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}.label{font-size:17px;font-weight:600;fill:#24292f}.detail{font-size:13px;fill:#59636e}.index{font-size:11px;letter-spacing:1.5px;fill:#59636e}</style>
-<defs><marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="m1 1 3 2-3 2" stroke="#c8d0d9" stroke-width="1.2"/></marker></defs>
-<g stroke="#c8d0d9" stroke-width="1.3" marker-end="url(#arrow)"><path d="M204 65H242"/><path d="M446 65H484"/><path d="M688 65H726"/></g>
-<g transform="translate(22 0)">
-<text class="index" y="20">01</text>
-<g stroke="#267b70" stroke-width="1.5">
-<rect x="13" y="44" width="42" height="42" rx="3" fill="#eff7f5"/>
-<path d="M0 55H13M0 75H13M55 65H70M26 44V35M42 86V95"/>
-<path d="M25 55V75M31 55H42V75H31M19 65H25"/>
-</g>
-<text class="label" y="124">Custom cells</text>
-<text class="detail" y="148">Logic, selection, storage</text>
-<text class="detail" y="168">Schematic and layout</text>
-</g>
-<g transform="translate(264 0)">
-<text class="index" y="20">02</text>
-<g stroke="#267b70" stroke-width="1.5" fill="#eff7f5">
-<rect y="43" width="35" height="18" rx="2"/><rect y="69" width="35" height="18" rx="2"/>
-<path d="M63 43H94L82 55V75L94 87H63L48 65Z"/>
-<path d="M35 52H54M35 78H54M88 65H106" fill="none"/>
-</g>
-<text class="label" y="124">Functional blocks</text>
-<text class="detail" y="148">ALU, register file, compare</text>
-<text class="detail" y="168">Compose reusable cells</text>
-</g>
-<g transform="translate(506 0)">
-<text class="index" y="20">03</text>
-<g stroke="#267b70" stroke-width="1.4" fill="#eff7f5">
-<rect x="0" y="44" width="16" height="43" rx="2"/><rect x="22" y="44" width="16" height="43" rx="2"/><rect x="44" y="44" width="16" height="43" rx="2"/><rect x="66" y="44" width="16" height="43" rx="2"/><rect x="88" y="44" width="16" height="43" rx="2"/>
-<path d="M8 36H96M8 36V44M30 36V44M52 36V44M74 36V44M96 36V44M16 65H22M38 65H44M60 65H66M82 65H88" fill="none"/>
-</g>
-<text class="label" y="124">Bit-sliced datapath</text>
-<text class="detail" y="148">Repeat slices across 32 bits</text>
-<text class="detail" y="168">Carry, compare, shared control</text>
-</g>
-<g transform="translate(748 0)">
-<text class="index" y="20">04</text>
-<g stroke="#267b70" stroke-width="1.4" fill="#eff7f5">
-<rect y="40" width="40" height="49" rx="3"/><rect x="62" y="40" width="55" height="19" rx="2"/><rect x="62" y="70" width="55" height="19" rx="2"/>
-<path d="M40 53H51V49H62M40 77H51V80H62M9 48V81M17 48V81M25 48V81" fill="none"/>
-</g>
-<text class="label" y="124">Physical integration</text>
-<text class="detail" y="148">Custom and synthesized logic</text>
-<text class="detail" y="168">LEF geometry, Liberty timing</text>
-</g>
-<path d="M22 191H938" stroke="#c8d0d9" stroke-width="1"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="352" viewBox="0 0 960 352" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">RISC-V datapath: selected blocks and data flow</title>
+<desc id="desc">Source operands pass from the register file through operand selection to the ALU. Writeback selects a result for the register file. The data memory interface shows address and read data paths. Supplied control is shown separately. This is a conceptual diagram, not an extracted schematic or exact wiring diagram.</desc>
+<rect width="960" height="352" fill="#ffffff"/>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;fill:#24292f;font-size:15px}.small{font-size:12px;fill:#59636e}.cap{font-size:10px;letter-spacing:1.4px;fill:#59636e}.block{fill:#ffffff;stroke:#6a7683;stroke-width:1.4}.wire{stroke:#6a7683;stroke-width:1.5;stroke-linejoin:round}.ctrl{stroke:#6a7683;stroke-width:1.2;stroke-dasharray:4 4}</style>
+<defs><marker id="a" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1L7 4L1 7" stroke="#6a7683" fill="none" stroke-width="1.3"/></marker></defs>
+<rect x="28" y="126" width="900" height="202" rx="5" stroke="#d0d7de"/>
+<text class="cap" x="46" y="146">CUSTOM DATAPATH · SELECTED BLOCKS</text>
+<rect class="block" x="300" y="20" width="330" height="55" rx="3"/>
+<text x="465" y="43" text-anchor="middle">Decoded control and immediates</text>
+<text class="small" x="465" y="61" text-anchor="middle">Supplied controller</text>
+<rect class="block" x="752" y="20" width="176" height="55" rx="3"/>
+<text x="840" y="43" text-anchor="middle">Data memory</text>
+<text class="small" x="840" y="61" text-anchor="middle">External interface</text>
+<path class="ctrl" d="M375 75V176" marker-end="url(#a)"/>
+<path class="ctrl" d="M560 75V95H599V176" marker-end="url(#a)"/>
+<text class="small" x="390" y="112">select / operation</text>
+<rect class="block" x="58" y="176" width="160" height="66" rx="3"/>
+<text x="138" y="204" text-anchor="middle">Register file</text>
+<text class="small" x="138" y="224" text-anchor="middle">Source operands</text>
+<path class="block" d="M319 176H416L435 191V227L416 242H319Z"/>
+<text x="373" y="204" text-anchor="middle">Operand</text><text x="373" y="224" text-anchor="middle">selection</text>
+<path d="M548 176H655L638 196V222L655 242H548L528 209Z" fill="#f0f7f5" stroke="#24796e" stroke-width="1.6"/>
+<text x="594" y="214" text-anchor="middle" style="font-weight:600;fill:#24796e">ALU</text>
+<path class="block" d="M773 176H870L889 191V227L870 242H773Z"/>
+<text x="828" y="204" text-anchor="middle">Writeback</text><text class="small" x="828" y="224" text-anchor="middle">Result selection</text>
+<path class="wire" d="M218 209H319M435 209H528M638 209H773" marker-end="url(#a)"/>
+<path class="wire" d="M218 209H319" marker-end="url(#a)"/>
+<path class="wire" d="M435 209H528" marker-end="url(#a)"/>
+<text class="small" x="246" y="198">A / B</text>
+<text class="small" x="674" y="198">result</text>
+<path class="wire" d="M699 209V47H752" marker-end="url(#a)"/>
+<circle cx="699" cy="209" r="2.5" fill="#6a7683"/>
+<text class="small" x="711" y="104">address</text>
+<path class="wire" d="M928 47H946V162H843V176" marker-end="url(#a)"/>
+<text class="small" x="856" y="153">read data</text>
+<path class="wire" d="M889 209H909V292H138V242" marker-end="url(#a)"/>
+<text class="small" x="521" y="284" text-anchor="middle">register writeback</text>
+<text class="small" x="28" y="347">Conceptual data flow. Memory write data, comparison, and sequencing paths are omitted.</text>
 </svg>
